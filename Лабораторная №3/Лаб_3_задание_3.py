@@ -7,7 +7,7 @@ subj_dict = {}
 details = []
 
 for line in lines:
-    parts = lines.strip().split(':')
+    parts = line.strip().split(':')
     if len(parts) == 2:
         subj = parts[0]
         details = parts[1] #chasy
