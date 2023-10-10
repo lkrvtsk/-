@@ -23,7 +23,7 @@ while True:
                 print(f"{number} - простое число.")
             else:
                 print(f"{number} - не является простым числом.")
-            break  # Выход из цикла, если введено корректное число
+            break
         else:
             print("Число должно быть в диапазоне от 0 до 1000.")
     except ValueError:

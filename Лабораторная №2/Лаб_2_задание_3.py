@@ -1,16 +1,15 @@
 def is_matrix_rectangular(matrix):
-    # Проверка, что все строки матрицы имеют одинаковую длину
     return all(len(row) == len(matrix[0]) for row in matrix)
 
 def count_non_zero_columns(matrix):
     if not matrix:
-        return 0  # Если матрица пуста, нет столбцов
+        return 0
     if not is_matrix_rectangular(matrix):
-        return -1  # Если матрица не прямоугольная, возвращаем -1
+        return -1  #не прямоугольная, возвращаем -1
 
     num_rows = len(matrix)
     num_cols = len(matrix[0])
-    non_zero_cols = 0  # Счетчик столбцов без нулей
+    non_zero_cols = 0
 
     for col in range(num_cols):
         has_zero = False
@@ -48,7 +47,7 @@ def main():
             else:
                 print(f"Количество столбцов без нулей: {result}")
 
-            break  # Выход из программы после завершения расчетов
+            break
         except ValueError:
             print("Введите корректное целое число.")
 

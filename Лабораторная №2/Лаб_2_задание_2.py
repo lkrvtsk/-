@@ -27,16 +27,16 @@ def main():
         user_input = input("Введите данные (список, словарь, число или строку), или 'exit' для выхода: ")
 
         if user_input.lower() == "exit":
-            break  # Выход из программы при вводе "exit"
+            break
 
         try:
             if user_input.isdigit():
                 processed_data = process_argument(int(user_input))
             elif user_input.startswith("{") and user_input.endswith("}"):
-                # Попытка интерпретировать введенную строку как словарь
+                # строку как словарь
                 processed_data = process_argument(eval(user_input))
             else:
-                # Попытка интерпретировать введенную строку как список
+                #  строку как список
                 processed_data = process_argument(eval(user_input))
 
             if processed_data is not None:
