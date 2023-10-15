@@ -4,13 +4,13 @@ class Triangle:
         self.side2 = side2
         self.side3 = side3
 
-    @staticmethod
-    def is_valid_side(side):
-        try:
-            side = float(side)
-            return side > 0
-        except ValueError:
-            return False
+    # @staticmethod
+    # def is_valid_side(side):
+    #     try:
+    #         side = float(side)
+    #         return side > 0
+    #     except ValueError:
+    #         return False
 
     def is_triangle(self):
         return ((self.side1 + self.side2 > self.side3) and (self.side1 + self.side3 > self.side2) and

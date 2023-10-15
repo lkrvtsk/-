@@ -11,21 +11,21 @@ class Room:
         wall_area = room_perimeter * self.height
         return wall_area - (self.windows * 4) - (self.doors * 2)
 
-    @staticmethod
-    def is_valid_side(side):
-        try:
-            side = float(side)
-            return side > 0
-        except ValueError:
-            return False
+    # @staticmethod
+    # def is_valid_side(side):
+    #     try:
+    #         side = float(side)
+    #         return side > 0
+    #     except ValueError:
+    #         return False
 
-    @staticmethod
-    def is_valid_quantity(quantity):
-        try:
-            quantity = int(quantity)
-            return quantity >= 0
-        except ValueError:
-            return False
+    # @staticmethod
+    # def is_valid_quantity(quantity):
+    #    try:
+    #        quantity = int(quantity)
+    #        return quantity >= 0
+    #    except ValueError:
+    #         return False
 
 
 def main():
