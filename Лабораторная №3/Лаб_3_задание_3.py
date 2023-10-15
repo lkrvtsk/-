@@ -9,7 +9,7 @@ details = []
 for line in lines:
     parts = line.strip().split(':')
     if len(parts) == 2:
-        subj = parts[0]
+        subj = parts[0] #predmet
         details = parts[1] #chasy
 
     num = re.findall(r'\d+', details)
