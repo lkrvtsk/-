@@ -37,11 +37,11 @@ def main():
             windows = int(input("Количество окон: "))
             doors = int(input("Количество дверей: "))
 
-            if not (length > 0 and width > 0 and height > 0):
+            if not (length > 0 and width > 0 and height > 0):  #if not (Room.is_valid_side(length) and Room.is_valid_side(width) and Room.is_valid_side(height)):
                 print("Длины должны быть положительными")
                 continue
 
-            if not (windows >= 0 and doors >= 0):
+            if not (windows >= 0 and doors >= 0):  #if not (Room.is_valid_quantity(windows) and Room.is_valid_quantity(doors)):
                 print("Кол-во окон или дверей должны быть неотрицательными")
                 continue
 
