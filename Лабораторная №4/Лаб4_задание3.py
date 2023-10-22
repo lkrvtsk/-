@@ -4,6 +4,7 @@ class Shape:
     def area(self):
         pass
 
+
 class Circle(Shape):
     def __init__(self, radius):
         self.radius = radius
@@ -35,27 +36,27 @@ def get_positive(sm):
             else:
                 print("введите неотрицательное число")
         except ValueError:
-            print("Введите корректное число.")
+            print("введите корректное число.")
 
 
 
 def main():
     while True:
         try:
-            shape_type = input("Выберите фигуру (круг, квадрат, прямоугольник): ").lower()
+            shape_type = input("выберите фигуру (круг, квадрат, прямоугольник): ").lower()
 
             if shape_type == "круг":
-                radius = get_positive("Введите радиус круга:")
+                radius = get_positive("введите радиус круга:")
                 shape = Circle(radius)
             elif shape_type == "квадрат":
-                side = get_positive("Введите сторону квадрата:")
+                side = get_positive("введите сторону квадрата:")
                 shape = Square(side)
             elif shape_type == "прямоугольник":
-                length = get_positive("Введите длину прямоугольника:")
-                width = get_positive("Введите ширину прямоугольника:")
+                length = get_positive("введите длину прямоугольника:")
+                width = get_positive("введите ширину прямоугольника:")
                 shape = Rectangle(length, width)
             else:
-                print("Некорректный выбор фигуры")
+                print("некорректный выбор фигуры")
                 continue
 
             area = shape.area()
