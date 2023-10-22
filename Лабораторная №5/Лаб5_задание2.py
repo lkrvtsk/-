@@ -1,15 +1,29 @@
-import numpy as np
+#import numpy as np
+import pandas as pd
+#import matplotlib.pyplot as plt
+from matplotlib import pyplot as plt
+from sklearn.datasets import load_iris
+iris = load_iris()
+df = pd.DataFrame(data=iris.data, columns=iris.feature_names)
 
-N = 2
-X = np.column_stack((np.ones(12), np.arange(N, N+12), np.random.randint(60, 83,size = 12)))
 
-Y = np.random.uniform(13.5, 18.6, size = 12)
+#df = pd.read_csv('dataset.csv')
+df = df.head(1000)
+df.isnull().sum()
 
-X_T = X.T
-A = np.linalg.inv(X_T @ X)
+df.hist()
+plt.show()
 
-Y_predicted = X @ A
+df.boxplot(log=True)
+plt.show()
+value = 0
+df.fillna(value, inplace=True)
+lower_bound = 0
+upper_bound = 1000
+df = df[(df['feature'] >= lower_bound) & (df['feature'] <= upper_bound)]
 
-print("оценки коэф \n", A) #оценки коэф
-print("исходные \n", Y) #исходные
-print("предсказаннные \n",Y_predicted) #предсказаннные
+df['room_count'] = df['room_feature']
+room_counts = df['room_count'].value_counts()
+
+pivot_table = pd.pivot_table(df, index='district',columns='room_count', values='count', aggfunc='count')
+df.to_csv('surname.csv', index=False)
